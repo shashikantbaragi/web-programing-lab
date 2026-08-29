@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book List</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #050816;
+            color: white;
+        }
+
+        h2 {
+            color: #00ffff;
+            text-align: center;
+        }
+
+        .book {
+            margin: 15px 0;
+            padding: 18px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid #00ffff;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .book:hover {
+            transform: translateX(8px);
+            box-shadow: 0 0 20px rgba(0,255,255,0.3);
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #00ffff;
+        }
+
+        .icon {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>📚 BOOK LIST</h2>
+
+    <div class="book">
+        <div class="icon">📕</div>
+        <a href="book1.html" target="bookinfo">
+            The Alchemist
+        </a>
+    </div>
+
+    <div class="book">
+        <div class="icon">📘</div>
+        <a href="book2.html" target="bookinfo">
+            The Great Gatsby
+        </a>
+    </div>
+
+    <div class="book">
+        <div class="icon">📗</div>
+        <a href="book3.html" target="bookinfo">
+            The Hobbit
+        </a>
+    </div>
+
+</body>
+</html>

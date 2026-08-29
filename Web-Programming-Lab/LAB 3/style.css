@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: #030510;
+}
+
+.scene {
+    min-height: 100vh;
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.scene::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, #32106b, transparent 30%),
+        radial-gradient(circle at 80% 70%, #00566b, transparent 30%);
+    z-index: 0;
+}
+
+.scene::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(5px);
+    opacity: .6;
+}
+
+.orb1 {
+    width: 180px;
+    height: 180px;
+    background: #00ffff;
+    left: 5%;
+    top: 10%;
+    box-shadow: 0 0 100px #00ffff;
+    animation: float 5s infinite alternate;
+}
+
+.orb2 {
+    width: 220px;
+    height: 220px;
+    background: #8b00ff;
+    right: 5%;
+    bottom: 10%;
+    box-shadow: 0 0 120px #8b00ff;
+    animation: float 6s infinite alternate-reverse;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(40px);
+    }
+}
+
+.form-card {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    background: rgba(10,15,35,.78);
+    border: 1px solid rgba(0,255,255,.4);
+    border-radius: 25px;
+    backdrop-filter: blur(20px);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.7),
+        inset 0 0 30px rgba(0,255,255,.04);
+    transform-style: preserve-3d;
+    transition: .5s;
+}
+
+.form-card:hover {
+    transform: perspective(1000px) rotateX(1deg);
+}
+
+.header {
+    text-align: center;
+}
+
+.icon {
+    font-size: 65px;
+    filter: drop-shadow(0 0 15px #00ffff);
+}
+
+.tag {
+    color: #00ffff;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.header h1 {
+    font-size: 40px;
+    letter-spacing: 5px;
+}
+
+.header h1 span {
+    color: #00ffff;
+    text-shadow: 0 0 20px #00ffff;
+}
+
+.header p:last-child {
+    color: #7d8aa7;
+}
+
+form {
+    margin-top: 30px;
+}
+
+form > label {
+    display: block;
+    margin: 20px 0 8px;
+    color: #00ffff;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #34415e;
+    border-radius: 10px;
+    background: rgba(255,255,255,.04);
+    color: white;
+    outline: none;
+    font-size: 15px;
+    transition: .3s;
+}
+
+select option {
+    background: #10162b;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 15px rgba(0,255,255,.2);
+}
+
+.choice {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.choice label,
+.events label {
+    color: #c4cbe0;
+}
+
+.events {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.events label {
+    padding: 14px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid #27334e;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.events label:hover {
+    border-color: #00ffff;
+    box-shadow: 0 0 15px rgba(0,255,255,.15);
+    transform: translateY(-3px);
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 14px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px;
+    transition: .3s;
+}
+
+input[type="submit"] {
+    border: 1px solid #00ffff;
+    background: #00ffff;
+    color: #030510;
+    box-shadow: 0 0 20px rgba(0,255,255,.3);
+}
+
+input[type="reset"] {
+    border: 1px solid #65728e;
+    background: transparent;
+    color: white;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px #00ffff;
+}
