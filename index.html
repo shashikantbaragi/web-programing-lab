@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Programming Lab</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            color: white;
+            background: #050816;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background:
+                radial-gradient(circle at 15% 20%, #34206b, transparent 30%),
+                radial-gradient(circle at 85% 75%, #005b6b, transparent 30%),
+                #050816;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(0,255,255,.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,255,255,.04) 1px, transparent 1px);
+            background-size: 45px 45px;
+        }
+
+        header {
+            text-align: center;
+            padding: 70px 20px 40px;
+        }
+
+        .logo {
+            font-size: 60px;
+            color: #00ffff;
+            text-shadow: 0 0 25px #00ffff;
+        }
+
+        h1 {
+            font-size: 45px;
+            letter-spacing: 5px;
+            margin: 15px 0;
+            text-shadow: 0 0 20px rgba(0,255,255,.5);
+        }
+
+        header p {
+            color: #9da9c4;
+            letter-spacing: 3px;
+        }
+
+        .labs {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            padding: 35px;
+            text-align: center;
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(0,255,255,.3);
+            border-radius: 22px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px rgba(0,0,0,.5);
+            transition: .4s;
+        }
+
+        .card:hover {
+            transform: perspective(800px)
+                       rotateX(4deg)
+                       rotateY(-5deg)
+                       translateY(-10px);
+
+            border-color: #00ffff;
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,.6),
+                0 0 30px rgba(0,255,255,.2);
+        }
+
+        .icon {
+            font-size: 60px;
+            filter: drop-shadow(0 0 12px #00ffff);
+        }
+
+        h2 {
+            margin: 15px 0 8px;
+            color: #00ffff;
+        }
+
+        .card p {
+            color: #aeb8ce;
+            min-height: 40px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 28px;
+            border: 1px solid #00ffff;
+            border-radius: 30px;
+            color: #00ffff;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .button:hover {
+            background: #00ffff;
+            color: #050816;
+            box-shadow: 0 0 25px #00ffff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 45px 20px;
+            color: #697792;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 700px) {
+            .labs {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">◈</div>
+
+    <h1>WEB PROGRAMMING LAB</h1>
+
+    <p>LAB EXERCISES 1 – 3</p>
+
+</header>
+
+
+<section class="labs">
+
+    <div class="card">
+
+        <div class="icon">📚</div>
+
+        <h2>LAB 1</h2>
+
+        <p>
+            Book Information Website
+        </p>
+
+        <a class="button" href="Web-Programming-Lab/Lab-1/index.html">
+            OPEN LAB 1 →
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="icon">🛍️</div>
+
+        <h2>LAB 2</h2>
+
+        <p>
+            Product Information Table
+        </p>
+
+        <a class="button" href="Web-Programming-Lab/Lab-2/index.html">
+            OPEN LAB 2 →
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="icon">🎭</div>
+
+        <h2>LAB 3(A)</h2>
+
+        <p>
+            Cultural Festival Registration
+        </p>
+
+        <a class="button" href="Web-Programming-Lab/Lab-3A/index.html">
+            OPEN LAB 3A →
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="icon">📖</div>
+
+        <h2>LAB 3(B)</h2>
+
+        <p>
+            Book Information Using Frames
+        </p>
+
+        <a class="button" href="Web-Programming-Lab/Lab-3B/index.html">
+            OPEN LAB 3B →
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    ◈ WEB PROGRAMMING LAB ◈<br><br>
+    HTML • CSS • FRAMEWORKS
+
+</footer>
+
+</body>
+</html>
