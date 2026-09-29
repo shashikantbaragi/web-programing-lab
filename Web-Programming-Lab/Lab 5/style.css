@@ -1,0 +1,163 @@
+/* Specification (b): Put the image in the background */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('campus_bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: #1e293b;
+}
+
+/* Top Header Container */
+.header-section {
+    background: rgba(255, 255, 255, 0.92);
+    text-align: center;
+    padding: 30px 20px 20px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid #1e3a8a;
+}
+
+/* Specification (c): Place College name at the top in large text */
+.college-name {
+    font-size: 38px;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Specification (c): Followed by the address in a smaller size */
+.college-address {
+    font-size: 15px;
+    color: #475569;
+    margin: 8px 0 0 0;
+    font-style: italic;
+}
+
+/* Specification (e): Scrolling text with a message for upcoming exam dates, events, etc */
+.ticker-bar {
+    background-color: #b91c1c;
+    color: #ffffff;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.ticker-bar marquee {
+    vertical-align: middle;
+}
+
+/* Content Container */
+.main-content {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px 45px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-title {
+    text-align: center;
+    color: #1e3a8a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+}
+
+/* 
+   Specification (d): Add names of courses offered, each in a different:
+   1. Color
+   2. Style (italic, normal, oblique, underline, bold)
+   3. Typeface (font-family)
+*/
+.courses-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.courses-list li {
+    padding: 14px 20px;
+    margin-bottom: 14px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border-left: 6px solid #cbd5e1;
+}
+
+/* Course 1 */
+.course-cse {
+    color: #1d4ed8;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* Course 2 */
+.course-ece {
+    color: #b91c1c;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 22px;
+}
+
+/* Course 3 */
+.course-me {
+    color: #15803d;
+    font-family: 'Courier New', monospace;
+    font-style: normal;
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 21px;
+}
+
+/* Course 4 */
+.course-civil {
+    color: #c2410c;
+    font-family: 'Arial Black', sans-serif;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+/* Course 5 */
+.course-aids {
+    color: #6b21a8;
+    font-family: 'Verdana', sans-serif;
+    font-style: oblique;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+/* Course 6 */
+.course-biotech {
+    color: #0f766e;
+    font-family: 'Palatino Linotype', 'Book Antiqua', serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.course-desc {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #475569;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.85);
+    margin-top: 40px;
+}

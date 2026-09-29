@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 4 - Country and Capital Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 40px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .form-row {
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #334155;
+        }
+
+        select {
+            padding: 10px 14px;
+            font-size: 16px;
+            border: 2px solid #94a3b8;
+            border-radius: 6px;
+            background-color: #f8fafc;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        select:focus {
+            border-color: #2563eb;
+        }
+
+        /* 
+           Required CSS to customize the capital's font properties:
+           1. Color
+           2. Bold (font-weight)
+           3. Font size
+        */
+        #capitalDisplay {
+            color: #dc2626;         /* Custom Color: Crimson Red */
+            font-weight: bold;      /* Font Weight: Bold */
+            font-size: 22px;        /* Font Size: 22px */
+            font-family: 'Georgia', serif;
+            padding: 4px 10px;
+            background-color: #fef2f2;
+            border: 1px dashed #f87171;
+            border-radius: 5px;
+            display: none;          /* Hidden until a valid country is selected */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Country &amp; Capital Selector</h2>
+        <p>Select any country from the dropdown box below to view its capital printed next to the list.</p>
+
+        <div class="form-row">
+            <label for="countrySelect">Select Country:</label>
+            
+            <!-- Selection box with 5 countries -->
+            <select id="countrySelect" onchange="showCapital()">
+                <option value="">-- Choose a Country --</option>
+                <option value="New Delhi">India</option>
+                <option value="Washington, D.C.">United States</option>
+                <option value="London">United Kingdom</option>
+                <option value="Tokyo">Japan</option>
+                <option value="Paris">France</option>
+            </select>
+
+            <!-- Span where capital is displayed next to the selection box -->
+            <span id="capitalDisplay"></span>
+        </div>
+
+        <br><br>
+        <hr>
+        <p><small>&copy; Web Programming Lab Exercise 4</small></p>
+    </div>
+
+    <!-- JavaScript to display capital on change -->
+    <script>
+        function showCapital() {
+            var dropdown = document.getElementById("countrySelect");
+            var selectedCapital = dropdown.value;
+            var displaySpan = document.getElementById("capitalDisplay");
+
+            if (selectedCapital !== "") {
+                displaySpan.innerHTML = "Capital: " + selectedCapital;
+                displaySpan.style.display = "inline";
+            } else {
+                displaySpan.innerHTML = "";
+                displaySpan.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
