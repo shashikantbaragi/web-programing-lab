@@ -1,0 +1,201 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 15px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #10172a, #263c65);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 520px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            text-align: center;
+            color: #243b65;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 7px;
+            font-weight: bold;
+            color: #27334a;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccd3df;
+            border-radius: 9px;
+            font-size: 15px;
+            background: #f9fbff;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #4361ee;
+            box-shadow: 0 0 5px #4361ee55;
+        }
+
+        .gender {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .gender label {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .gender input {
+            width: auto;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 9px;
+            background: linear-gradient(135deg, #4361ee, #7048e8);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .note {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>User Registration</h1>
+        <p class="subtitle">Please enter your information</p>
+
+        <form id="userForm">
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required
+                   placeholder="Enter your full name">
+
+            <label>Gender</label>
+            <div class="gender">
+                <label>
+                    <input type="radio" name="gender"
+                           value="Male" required> Male
+                </label>
+
+                <label>
+                    <input type="radio" name="gender"
+                           value="Female"> Female
+                </label>
+
+                <label>
+                    <input type="radio" name="gender"
+                           value="Other"> Other
+                </label>
+            </div>
+
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" required
+                   pattern="[0-9]{10}" maxlength="10"
+                   inputmode="numeric"
+                   placeholder="Enter 10-digit mobile number"
+                   title="Enter a 10-digit mobile number">
+
+            <label for="email">Email ID</label>
+            <input type="email" id="email" required
+                   placeholder="example@email.com">
+
+            <label for="city">City</label>
+            <input type="text" id="city" required
+                   placeholder="Enter your city">
+
+            <label for="state">State</label>
+            <input type="text" id="state" required
+                   placeholder="Enter your state">
+
+            <label for="country">Country</label>
+            <input type="text" id="country" required
+                   placeholder="Enter your country">
+
+            <button type="submit">Submit Information →</button>
+        </form>
+
+        <p class="note">HTML • CSS • JavaScript</p>
+    </div>
+
+    <script>
+        document.getElementById("userForm").addEventListener(
+            "submit", function(event) {
+
+                event.preventDefault();
+
+                const gender = document.querySelector(
+                    'input[name="gender"]:checked'
+                );
+
+                const user = {
+                    name: document.getElementById("name").value.trim(),
+                    gender: gender.value,
+                    mobile: document.getElementById("mobile").value,
+                    email: document.getElementById("email").value.trim(),
+                    city: document.getElementById("city").value.trim(),
+                    state: document.getElementById("state").value.trim(),
+                    country: document.getElementById("country").value.trim()
+                };
+
+                sessionStorage.setItem("userInfo", JSON.stringify(user));
+
+                window.location.href = "display.html";
+            }
+        );
+    </script>
+
+</body>
+</html>
+```
